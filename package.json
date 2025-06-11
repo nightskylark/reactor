@@ -1,0 +1,16 @@
+{
+  "name": "reactor",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"No tests specified\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ]
+}
