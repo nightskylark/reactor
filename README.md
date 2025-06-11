@@ -7,11 +7,18 @@ This monorepo contains a modular React component library. The first feature is a
 - `@lib/htmleditor-core` – Core Quill wrapper.
 - `@lib/htmleditor-toolbar` – Default toolbar plugin.
 
+- `@lib/htmleditor-media` – Image upload plugin.
+
 Run `npm ci` at the repo root, then `npm run build` and `npm test` to build and test all packages. Use the core editor with plugins:
 
 ```tsx
 import { HtmlEditorCore } from '@lib/htmleditor-core';
 import { toolbarPlugin } from '@lib/htmleditor-toolbar';
+import { createImageUploadPlugin } from '@lib/htmleditor-media';
 
-<HtmlEditorCore plugins={[toolbarPlugin]} />;
+const imageUpload = createImageUploadPlugin({
+  upload: async (file) => URL.createObjectURL(file),
+});
+
+<HtmlEditorCore plugins={[toolbarPlugin, imageUpload]} />;
 ```

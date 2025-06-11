@@ -12,6 +12,7 @@ module.exports = {
   moduleNameMapper: {
     '^@lib/htmleditor-core$': '<rootDir>/packages/htmleditor-core/src',
     '^@lib/htmleditor-toolbar$': '<rootDir>/packages/htmleditor-toolbar/src',
+    '^@lib/htmleditor-media$': '<rootDir>/packages/htmleditor-media/src',
     '\\.(css)$': 'identity-obj-proxy'
   },
   setupFilesAfterEnv: ['<rootDir>/packages/htmleditor-core/jest.setup.ts']
