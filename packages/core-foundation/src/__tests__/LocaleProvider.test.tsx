@@ -38,4 +38,17 @@ describe('LocaleProvider', () => {
     );
     expect(document.documentElement.getAttribute('lang')).toBe('en');
   });
+
+  it('applies text direction from props', () => {
+    render(
+      <LocaleProvider
+        initialLocale="ar"
+        messages={{ ar: { hello: 'مرحبا' } }}
+        directions={{ ar: 'rtl' }}
+      >
+        <div />
+      </LocaleProvider>
+    );
+    expect(document.documentElement.getAttribute('dir')).toBe('rtl');
+  });
 });

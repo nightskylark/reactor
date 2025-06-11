@@ -23,6 +23,8 @@ export interface HtmlEditorCoreProps {
   'aria-describedby'?: string;
   /** Additional help text for screen readers */
   screenReaderHelpText?: string;
+  /** Text direction for the editor */
+  dir?: 'ltr' | 'rtl';
 }
 
 export const HtmlEditorCore: React.FC<HtmlEditorCoreProps> = ({
@@ -36,6 +38,7 @@ export const HtmlEditorCore: React.FC<HtmlEditorCoreProps> = ({
   'aria-labelledby': ariaLabelledBy,
   'aria-describedby': ariaDescribedBy,
   screenReaderHelpText = 'Rich text editor',
+  dir,
 }) => {
   const modules = useMemo(() => {
     const base: Record<string, unknown> = {};
@@ -61,19 +64,21 @@ export const HtmlEditorCore: React.FC<HtmlEditorCoreProps> = ({
   return (
     <>
       <VisuallyHidden id={hintId}>{screenReaderHelpText}</VisuallyHidden>
-      <ReactQuill
-        theme="snow"
-        value={value}
-        defaultValue={defaultValue}
-        onChange={onChange}
-        readOnly={readOnly}
-        modules={modules}
-        formats={formats}
-        placeholder={placeholder}
-        aria-label={ariaLabel}
-        aria-labelledby={ariaLabelledBy}
-        aria-describedby={describedBy}
-      />
+      <div dir={dir}>
+        <ReactQuill
+          theme="snow"
+          value={value}
+          defaultValue={defaultValue}
+          onChange={onChange}
+          readOnly={readOnly}
+          modules={modules}
+          formats={formats}
+          placeholder={placeholder}
+          aria-label={ariaLabel}
+          aria-labelledby={ariaLabelledBy}
+          aria-describedby={describedBy}
+        />
+      </div>
     </>
   );
 };
