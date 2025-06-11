@@ -31,6 +31,7 @@ The provider sets CSS variables on `document.documentElement` based on the curre
 ## LocaleProvider
 
 Use `LocaleProvider` to supply translated messages and switch locales.
+The provider also updates the document `lang` attribute to match the current locale.
 
 ```tsx
 import { LocaleProvider, useLocale } from '@lib/core-foundation';
@@ -68,4 +69,17 @@ import { FocusTrap } from '@lib/core-foundation';
     <button>Second</button>
   </dialog>
 </FocusTrap>;
+```
+
+## VisuallyHidden
+
+`VisuallyHidden` renders content that is hidden visually but still available to screen readers. Use it to provide additional instructions or context for assistive technology users.
+
+```tsx
+import { VisuallyHidden } from '@lib/core-foundation';
+
+<button>
+  Submit
+  <VisuallyHidden>submits the form</VisuallyHidden>
+</button>
 ```

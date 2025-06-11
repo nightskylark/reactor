@@ -58,5 +58,6 @@ describe('FocusTrap', () => {
     );
     const container = getByRole('dialog');
     expect(container).toHaveAttribute('aria-label', 'modal');
+    expect(container).toHaveAttribute('tabindex', '-1');
   });
 });

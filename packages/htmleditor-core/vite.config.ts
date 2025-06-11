@@ -11,7 +11,7 @@ export default defineConfig({
       fileName: (format) => `htmleditor-core.${format}.js`,
     },
     rollupOptions: {
-      external: ['react', 'react-dom', 'react-quill'],
+      external: ['react', 'react-dom', 'react-quill', '@lib/core-foundation'],
       output: {
         globals: {
           react: 'React',

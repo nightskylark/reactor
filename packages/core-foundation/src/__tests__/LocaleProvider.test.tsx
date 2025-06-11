@@ -29,4 +29,13 @@ describe('LocaleProvider', () => {
     });
     expect(getByText('Hola')).toBeInTheDocument();
   });
+
+  it('sets the lang attribute on the document element', () => {
+    render(
+      <LocaleProvider initialLocale="en" messages={messages}>
+        <div />
+      </LocaleProvider>
+    );
+    expect(document.documentElement.getAttribute('lang')).toBe('en');
+  });
 });
