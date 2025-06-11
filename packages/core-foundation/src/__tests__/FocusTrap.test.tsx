@@ -49,4 +49,14 @@ describe('FocusTrap', () => {
 
     expect(document.activeElement).toBe(trigger);
   });
+
+  it('forwards extra props to the container', () => {
+    const { getByRole } = render(
+      <FocusTrap role="dialog" aria-label="modal">
+        <button>inside</button>
+      </FocusTrap>
+    );
+    const container = getByRole('dialog');
+    expect(container).toHaveAttribute('aria-label', 'modal');
+  });
 });

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-export interface FocusTrapProps {
+export interface FocusTrapProps extends React.HTMLAttributes<HTMLDivElement> {
   active?: boolean;
   children: React.ReactNode;
 }
@@ -8,6 +8,7 @@ export interface FocusTrapProps {
 export const FocusTrap: React.FC<FocusTrapProps> = ({
   active = true,
   children,
+  ...rest
 }) => {
   const ref = useRef<HTMLDivElement>(null);
   const previouslyFocused = useRef<HTMLElement | null>(null);
@@ -46,7 +47,11 @@ export const FocusTrap: React.FC<FocusTrapProps> = ({
     };
   }, [active]);
 
-  return <div ref={ref}>{children}</div>;
+  return (
+    <div ref={ref} {...rest}>
+      {children}
+    </div>
+  );
 };
 
 export default FocusTrap;

@@ -26,10 +26,16 @@ function App() {
       value={value}
       onChange={setValue}
       plugins={[toolbarPlugin, imageUpload]}
+      aria-label="Rich text editor"
     />
   );
 }
 ```
+
+### Accessibility
+
+`HtmlEditorCore` forwards ARIA attributes like `aria-label`, `aria-labelledby`
+and `aria-describedby` to the underlying editor element.
 
 ## Development
 

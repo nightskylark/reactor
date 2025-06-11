@@ -14,6 +14,12 @@ export interface HtmlEditorCoreProps {
   readOnly?: boolean;
   placeholder?: string;
   plugins?: HtmlEditorPlugin[];
+  /** Accessible label for the editor */
+  'aria-label'?: string;
+  /** ID of element labeling the editor */
+  'aria-labelledby'?: string;
+  /** ID of element describing the editor */
+  'aria-describedby'?: string;
 }
 
 export const HtmlEditorCore: React.FC<HtmlEditorCoreProps> = ({
@@ -23,6 +29,9 @@ export const HtmlEditorCore: React.FC<HtmlEditorCoreProps> = ({
   readOnly = false,
   placeholder,
   plugins = [],
+  'aria-label': ariaLabel,
+  'aria-labelledby': ariaLabelledBy,
+  'aria-describedby': ariaDescribedBy,
 }) => {
   const modules = useMemo(() => {
     const base: Record<string, unknown> = {};
@@ -52,6 +61,9 @@ export const HtmlEditorCore: React.FC<HtmlEditorCoreProps> = ({
       modules={modules}
       formats={formats}
       placeholder={placeholder}
+      aria-label={ariaLabel}
+      aria-labelledby={ariaLabelledBy}
+      aria-describedby={ariaDescribedBy}
     />
   );
 };
