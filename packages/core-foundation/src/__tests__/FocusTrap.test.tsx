@@ -1,5 +1,5 @@
-import React from 'react';
-import { render } from '@testing-library/react';
+import React, { useState } from 'react';
+import { render, act } from '@testing-library/react';
 import FocusTrap from '../FocusTrap';
 
 describe('FocusTrap', () => {
@@ -17,5 +17,36 @@ describe('FocusTrap', () => {
 
     outside.focus();
     expect(document.activeElement).toBe(inside);
+  });
+
+  it('restores focus on unmount', () => {
+    const Wrapper = () => {
+      const [open, setOpen] = useState(true);
+      return (
+        <div>
+          <button>trigger</button>
+          {open && (
+            <FocusTrap>
+              <button>inside</button>
+            </FocusTrap>
+          )}
+          <button onClick={() => setOpen(false)}>close</button>
+        </div>
+      );
+    };
+
+    const { getByText } = render(<Wrapper />);
+    const trigger = getByText('trigger') as HTMLButtonElement;
+    const close = getByText('close') as HTMLButtonElement;
+    const inside = getByText('inside') as HTMLButtonElement;
+
+    trigger.focus();
+    expect(document.activeElement).toBe(inside);
+
+    act(() => {
+      close.click();
+    });
+
+    expect(document.activeElement).toBe(trigger);
   });
 });
