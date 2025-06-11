@@ -8,6 +8,7 @@ export interface FocusTrapProps extends React.HTMLAttributes<HTMLDivElement> {
 export const FocusTrap: React.FC<FocusTrapProps> = ({
   active = true,
   children,
+  tabIndex = -1,
   ...rest
 }) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -48,7 +49,7 @@ export const FocusTrap: React.FC<FocusTrapProps> = ({
   }, [active]);
 
   return (
-    <div ref={ref} {...rest}>
+    <div ref={ref} tabIndex={tabIndex} {...rest}>
       {children}
     </div>
   );

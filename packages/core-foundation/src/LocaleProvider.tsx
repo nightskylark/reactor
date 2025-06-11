@@ -1,4 +1,10 @@
-import React, { createContext, useCallback, useContext, useState } from 'react';
+import React, {
+  createContext,
+  useCallback,
+  useContext,
+  useState,
+  useEffect,
+} from 'react';
 
 export type Messages = Record<string, string>;
 
@@ -42,6 +48,10 @@ export const LocaleProvider: React.FC<LocaleProviderProps> = ({
     },
     [allMessages]
   );
+
+  useEffect(() => {
+    document.documentElement.setAttribute('lang', locale);
+  }, [locale]);
 
   const register = useCallback((loc: string, msgs: Messages) => {
     setAllMessages((prev) => ({ ...prev, [loc]: { ...prev[loc], ...msgs } }));

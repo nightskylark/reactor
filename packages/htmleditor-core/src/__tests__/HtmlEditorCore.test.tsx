@@ -27,8 +27,11 @@ describe('HtmlEditorCore', () => {
   });
 
   it('passes ARIA attributes to ReactQuill', () => {
-    render(<HtmlEditorCore aria-label="editor" />);
+    render(<HtmlEditorCore aria-label="editor" screenReaderHelpText="help" />);
     const el = screen.getByLabelText('editor');
     expect(el).toBeInTheDocument();
+    const hint = screen.getByText('help');
+    expect(hint).toHaveAttribute('id');
+    expect(el).toHaveAttribute('aria-describedby', hint.getAttribute('id')!);
   });
 });

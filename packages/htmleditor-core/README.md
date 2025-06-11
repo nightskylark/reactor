@@ -36,6 +36,7 @@ function App() {
 
 `HtmlEditorCore` forwards ARIA attributes like `aria-label`, `aria-labelledby`
 and `aria-describedby` to the underlying editor element.
+It also renders a visually hidden help text for screen reader users. Customize this message via the `screenReaderHelpText` prop.
 
 ## Development
 
