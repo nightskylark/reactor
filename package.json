@@ -7,7 +7,9 @@
     "build": "npm --workspaces run build",
     "lint": "eslint \"packages/**/*.{ts,tsx}\" --max-warnings=0",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "website:deploy": "npm --prefix website run deploy",
+    "deploy": "npm run build-storybook && rm -rf website/static/storybook && cp -R storybook-static website/static/storybook && npm run website:deploy"
   },
   "keywords": [],
   "author": "",
