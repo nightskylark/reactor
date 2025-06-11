@@ -1,10 +1,8 @@
 import React from 'react';
 
-export const VisuallyHidden: React.FC<React.HTMLAttributes<HTMLSpanElement>> = ({
-  children,
-  style,
-  ...rest
-}) => (
+export const VisuallyHidden: React.FC<
+  React.HTMLAttributes<HTMLSpanElement>
+> = ({ children, style, ...rest }) => (
   <span
     style={{
       position: 'absolute',

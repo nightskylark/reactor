@@ -56,9 +56,7 @@ export const HtmlEditorCore: React.FC<HtmlEditorCoreProps> = ({
   }, [plugins]);
 
   const hintId = useId();
-  const describedBy = ariaDescribedBy
-    ? `${ariaDescribedBy} ${hintId}`
-    : hintId;
+  const describedBy = ariaDescribedBy ? `${ariaDescribedBy} ${hintId}` : hintId;
 
   return (
     <>
