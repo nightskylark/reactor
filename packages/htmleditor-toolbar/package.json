@@ -1,0 +1,29 @@
+{
+  "name": "@lib/htmleditor-toolbar",
+  "version": "0.1.0",
+  "description": "Default toolbar plugin for HtmlEditor",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "module": "dist/index.js",
+  "files": ["dist"],
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite",
+    "test": "echo \"No tests specified\""
+  },
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "@lib/htmleditor-core": "^0.1.0"
+  },
+  "devDependencies": {
+    "@lib/htmleditor-core": "file:../htmleditor-core",
+    "@types/react": "^19.1.8",
+    "@vitejs/plugin-react": "^4.5.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5"
+  },
+  "type": "module"
+}

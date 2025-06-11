@@ -1,5 +1,5 @@
 {
-  "name": "@lib/htmleditor",
+  "name": "@lib/htmleditor-core",
   "version": "0.1.0",
   "description": "",
   "main": "dist/index.js",
@@ -17,6 +17,10 @@
   "files": [
     "dist"
   ],
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
   "devDependencies": {
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",

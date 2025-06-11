@@ -7,8 +7,8 @@ export default defineConfig({
   build: {
     lib: {
       entry: path.resolve(__dirname, 'src/index.ts'),
-      name: 'HtmlEditor',
-      fileName: (format) => `htmleditor.${format}.js`,
+      name: 'HtmlEditorCore',
+      fileName: (format) => `htmleditor-core.${format}.js`,
     },
     rollupOptions: {
       external: ['react', 'react-dom', 'react-quill'],
