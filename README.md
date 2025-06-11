@@ -9,7 +9,7 @@ This monorepo contains a modular React component library. The first feature is a
 
 - `@lib/htmleditor-media` – Image upload plugin.
 
-Run `npm ci` at the repo root, then `npm run build` and `npm test` to build and test all packages. Use the core editor with plugins:
+Run `npm ci` at the repo root, then `npm run build` and `npm test` to build and test all packages. Start Storybook with `npm run storybook` to explore components. Use the core editor with plugins:
 
 ```tsx
 import { HtmlEditorCore } from '@lib/htmleditor-core';
