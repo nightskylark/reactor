@@ -9,7 +9,14 @@ This monorepo contains a modular React component library. The first feature is a
 - `@lib/htmleditor-media` – Image upload plugin.
 - `@lib/core-foundation` – Shared utilities including theming, localization and text direction management.
 
-Run `npm ci` at the repo root, then `npm run build` and `npm test` to build and test all packages. Start Storybook with `npm run storybook` to explore components. The library includes theming and locale providers from `@lib/core-foundation`:
+Run `npm ci` at the repo root, then `npm run build` and `npm test` to build and test all packages. Start Storybook with `npm run storybook` to explore components.
+The `website` folder contains the documentation site. Deploy it with:
+
+```bash
+npm run deploy
+```
+
+The library includes theming and locale providers from `@lib/core-foundation`:
 
 ```tsx
 import { HtmlEditorCore } from '@lib/htmleditor-core';
