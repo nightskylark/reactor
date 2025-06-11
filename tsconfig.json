@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "jsx": "react-jsx",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "baseUrl": ".",
+    "paths": {
+      "@lib/htmleditor-core": ["packages/htmleditor-core/src"],
+      "@lib/htmleditor-toolbar": ["packages/htmleditor-toolbar/src"]
+    }
+  }
+}

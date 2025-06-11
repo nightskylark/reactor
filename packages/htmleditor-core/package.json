@@ -6,7 +6,7 @@
   "scripts": {
     "build": "vite build",
     "dev": "vite",
-    "test": "echo \"No tests specified\""
+    "test": "jest -c ../../jest.config.cjs"
   },
   "keywords": [],
   "author": "",

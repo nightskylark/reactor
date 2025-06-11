@@ -9,7 +9,7 @@
   "scripts": {
     "build": "vite build",
     "dev": "vite",
-    "test": "echo \"No tests specified\""
+    "test": "jest -c ../../jest.config.cjs"
   },
   "peerDependencies": {
     "react": "^18.0.0",
