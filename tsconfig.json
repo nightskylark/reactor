@@ -15,6 +15,9 @@
       ],
       "@lib/htmleditor-media": [
         "packages/htmleditor-media/src"
+      ],
+      "@lib/core-foundation": [
+        "packages/core-foundation/src"
       ]
     }
   }
