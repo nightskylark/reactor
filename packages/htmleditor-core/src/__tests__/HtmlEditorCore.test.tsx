@@ -3,8 +3,16 @@ import { render, screen } from '@testing-library/react';
 import { HtmlEditorCore } from '../HtmlEditorCore';
 import { toolbarPlugin } from '@lib/htmleditor-toolbar';
 
-jest.mock('react-quill', () => (props: any) => {
-  return <div data-testid="quill" data-modules={JSON.stringify(props.modules)} data-formats={JSON.stringify(props.formats)} />;
+jest.mock('react-quill', () => {
+  const Mock: React.FC<Record<string, unknown>> = (props) => (
+    <div
+      data-testid="quill"
+      data-modules={JSON.stringify(props.modules)}
+      data-formats={JSON.stringify(props.formats)}
+    />
+  );
+  Mock.displayName = 'MockReactQuill';
+  return Mock;
 });
 
 describe('HtmlEditorCore', () => {

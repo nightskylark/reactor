@@ -8,16 +8,16 @@ export default defineConfig({
     lib: {
       entry: path.resolve(__dirname, 'src/index.ts'),
       name: 'HtmlEditorToolbar',
-      fileName: (format) => `htmleditor-toolbar.${format}.js`
+      fileName: (format) => `htmleditor-toolbar.${format}.js`,
     },
     rollupOptions: {
       external: ['react', 'react-dom', '@lib/htmleditor-core'],
       output: {
         globals: {
           react: 'React',
-          'react-dom': 'ReactDOM'
-        }
-      }
-    }
-  }
+          'react-dom': 'ReactDOM',
+        },
+      },
+    },
+  },
 });

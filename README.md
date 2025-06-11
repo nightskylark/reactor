@@ -7,7 +7,7 @@ This monorepo contains a modular React component library. The first feature is a
 - `@lib/htmleditor-core` – Core Quill wrapper.
 - `@lib/htmleditor-toolbar` – Default toolbar plugin.
 
-Run `npm install` and then `npm run build` within each package to build. Use the core editor with plugins:
+Run `npm ci` at the repo root, then `npm run build` and `npm test` to build and test all packages. Use the core editor with plugins:
 
 ```tsx
 import { HtmlEditorCore } from '@lib/htmleditor-core';

@@ -7,8 +7,8 @@ export const toolbarPlugin: HtmlEditorPlugin = {
       ['bold', 'italic', 'underline', 'strike'],
       [{ list: 'ordered' }, { list: 'bullet' }],
       ['link', 'image'],
-      ['clean']
-    ]
+      ['clean'],
+    ],
   },
   formats: [
     'header',
@@ -19,6 +19,6 @@ export const toolbarPlugin: HtmlEditorPlugin = {
     'list',
     'bullet',
     'link',
-    'image'
-  ]
+    'image',
+  ],
 };

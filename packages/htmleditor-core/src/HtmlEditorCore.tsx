@@ -3,7 +3,7 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
 export interface HtmlEditorPlugin {
-  modules?: Record<string, any>;
+  modules?: Record<string, unknown>;
   formats?: string[];
 }
 
@@ -25,7 +25,7 @@ export const HtmlEditorCore: React.FC<HtmlEditorCoreProps> = ({
   plugins = [],
 }) => {
   const modules = useMemo(() => {
-    const base: Record<string, any> = {};
+    const base: Record<string, unknown> = {};
     for (const plugin of plugins) {
       Object.assign(base, plugin.modules);
     }
