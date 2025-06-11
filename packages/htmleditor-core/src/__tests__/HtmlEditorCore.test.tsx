@@ -6,6 +6,7 @@ import { toolbarPlugin } from '@lib/htmleditor-toolbar';
 jest.mock('react-quill', () => {
   const Mock: React.FC<Record<string, unknown>> = (props) => (
     <div
+      {...props}
       data-testid="quill"
       data-modules={JSON.stringify(props.modules)}
       data-formats={JSON.stringify(props.formats)}
@@ -23,5 +24,11 @@ describe('HtmlEditorCore', () => {
     const formats = JSON.parse(el.getAttribute('data-formats')!);
     expect(modules.toolbar).toBeDefined();
     expect(formats).toEqual(expect.arrayContaining(['bold', 'italic']));
+  });
+
+  it('passes ARIA attributes to ReactQuill', () => {
+    render(<HtmlEditorCore aria-label="editor" />);
+    const el = screen.getByLabelText('editor');
+    expect(el).toBeInTheDocument();
   });
 });
