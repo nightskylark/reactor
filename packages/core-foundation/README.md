@@ -30,8 +30,8 @@ The provider sets CSS variables on `document.documentElement` based on the curre
 
 ## LocaleProvider
 
-Use `LocaleProvider` to supply translated messages and switch locales.
-The provider also updates the document `lang` attribute to match the current locale.
+Use `LocaleProvider` to supply translated messages, switch locales and control text direction.
+The provider updates the document `lang` and `dir` attributes based on the active locale.
 
 ```tsx
 import { LocaleProvider, useLocale } from '@lib/core-foundation';
@@ -40,6 +40,7 @@ const messages = {
   en: { hello: 'Hello' },
   es: { hello: 'Hola' },
 };
+const directions = { en: 'ltr', es: 'ltr', ar: 'rtl' };
 
 function Greeting() {
   const { t, setLocale } = useLocale();
@@ -51,7 +52,7 @@ function Greeting() {
   );
 }
 
-<LocaleProvider initialLocale="en" messages={messages}>
+<LocaleProvider initialLocale="en" messages={messages} directions={directions}>
   <Greeting />
 </LocaleProvider>;
 ```

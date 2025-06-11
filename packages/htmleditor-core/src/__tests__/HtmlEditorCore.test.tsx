@@ -34,4 +34,10 @@ describe('HtmlEditorCore', () => {
     expect(hint).toHaveAttribute('id');
     expect(el).toHaveAttribute('aria-describedby', hint.getAttribute('id')!);
   });
+
+  it('forwards dir prop', () => {
+    render(<HtmlEditorCore dir="rtl" />);
+    const el = screen.getByTestId('quill');
+    expect(el.parentElement).toHaveAttribute('dir', 'rtl');
+  });
 });

@@ -7,7 +7,7 @@ This monorepo contains a modular React component library. The first feature is a
 - `@lib/htmleditor-core` – Core Quill wrapper.
 - `@lib/htmleditor-toolbar` – Default toolbar plugin.
 - `@lib/htmleditor-media` – Image upload plugin.
-- `@lib/core-foundation` – Shared utilities including theming and localization.
+- `@lib/core-foundation` – Shared utilities including theming, localization and text direction management.
 
 Run `npm ci` at the repo root, then `npm run build` and `npm test` to build and test all packages. Start Storybook with `npm run storybook` to explore components. The library includes theming and locale providers from `@lib/core-foundation`:
 
@@ -25,10 +25,13 @@ const messages = {
   en: { hello: 'Hello' },
   es: { hello: 'Hola' },
 };
+const directions = { en: 'ltr', es: 'ltr', ar: 'rtl' };
 
 <ThemeProvider>
-  <LocaleProvider initialLocale="en" messages={messages}>
+  <LocaleProvider initialLocale="en" messages={messages} directions={directions}>
     <HtmlEditorCore plugins={[toolbarPlugin, imageUpload]} />
   </LocaleProvider>
 </ThemeProvider>;
 ```
+
+`LocaleProvider` automatically updates the document `lang` and `dir` attributes based on the active locale and the provided `directions` map.
